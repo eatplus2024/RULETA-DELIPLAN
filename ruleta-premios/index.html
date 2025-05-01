@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruleta de Premios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Ruleta de Premios</h1>
+        
+        <div id="user-form" class="card">
+            <h2>Ingresa tu nombre para jugar</h2>
+            <div class="input-group">
+                <input type="text" id="user-name" placeholder="Tu nombre">
+                <button id="submit-name">Listo</button>
+            </div>
+            <div id="name-error" class="error-message hidden"></div>
+            <div id="change-name-container" class="hidden">
+                <button id="change-name" class="outline-button">Cambiar nombre</button>
+                <p class="small-text">Puedes cambiar tu nombre porque no has ganado este mes.</p>
+            </div>
+        </div>
+        
+        <div id="player-info" class="hidden">
+            <p class="player-name">Jugando como: <strong id="display-name"></strong></p>
+            <p id="already-played" class="error-text hidden">Ya has jugado hoy. Vuelve mañana para otra oportunidad.</p>
+            <p id="monthly-limit" class="error-text hidden">Has alcanzado tu límite mensual de $15,000. Vuelve el próximo mes.</p>
+        </div>
+        
+        <div class="wheel-container">
+            <div class="power-controls">
+                <canvas id="canvas" width="380" height="380"></canvas>
+                <div id="spin-button-container">
+                    <button id="spin-button" class="spin-button">¡Girar la Ruleta!</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Ganadores Recientes</h2>
+            <div id="winners-table-container">
+                <table id="winners-table" class="hidden">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Premio</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="winners-list">
+                    </tbody>
+                </table>
+                <p id="no-winners" class="centered-text">Aún no hay ganadores. ¡Sé el primero!</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Estadísticas del Mes</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-label">Mes actual:</span>
+                    <span id="current-month" class="stat-value"></span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total repartido:</span>
+                    <span id="total-month" class="stat-value">$0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Límite mensual:</span>
+                    <span class="stat-value">$100,000</span>
+                </div>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="result-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="result-title"></h2>
+            <p id="result-message"></p>
+            <button id="close-modal" class="button">Cerrar</button>
+        </div>
+    </div>
+    
+    <script src="js/winwheel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
