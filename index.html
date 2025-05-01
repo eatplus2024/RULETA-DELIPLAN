@@ -56,27 +56,6 @@
                 <p id="no-winners" class="centered-text">Aún no hay ganadores. ¡Sé el primero!</p>
             </div>
         </div>
-        
-        <div class="card">
-            <h2>Estadísticas del Mes</h2>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <span class="stat-label">Mes actual:</span>
-                    <span id="current-month" class="stat-value"></span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Total repartido:</span>
-                    <span id="total-month" class="stat-value">$0</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Límite mensual:</span>
-                    <span class="stat-value">$100,000</span>
-                </div>
-                <div class="progress-container">
-                    <div id="progress-bar" class="progress-bar"></div>
-                </div>
-            </div>
-        </div>
     </div>
     
     <div id="result-modal" class="modal hidden">
@@ -89,7 +68,7 @@
     
     <script src="js/winwheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="js/confetti.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
